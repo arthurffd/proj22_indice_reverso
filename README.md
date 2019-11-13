@@ -32,7 +32,8 @@ Last Updates:  <br />
   ```
 
 <br />
-3. With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:<br />
+3. With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:
+
   - Create 2 folders in the HDFS: docs and out :
   
   ``` 
@@ -54,7 +55,6 @@ Last Updates:  <br />
  HADOOP_HOME/scripts/reducer3.py<br />
 ```
 
-<br />
   - Give the proper permissions to the scripts:<br />
 
 ```
@@ -62,6 +62,7 @@ Last Updates:  <br />
 ``` 
 
 <br />
+
 5. Execute the Hadoop Streaming jar, informing the params( input, output, mapper, reducer, file): <br />
 
 ```
