@@ -20,20 +20,20 @@ Last Updates:  <br />
   <br /><br />
   
 ## Settings:
-1- Upload the challenge dataset (https://github.com/projeto22/challenge-data-engineer/tree/master/dataset) to a folder in the NameNode server. In our example we created the following folder in namenode: <br />
+1. Upload the challenge dataset (https://github.com/projeto22/challenge-data-engineer/tree/master/dataset) to a folder in the NameNode server. In our example we created the following folder in namenode: <br />
   ``` 
      mkdir ~/data/dataset  
   ```
   <br />
-2- After upload the dataset files, we will need to convert these files to UTF-8 format, since some of them are in ISO-8859-1 encoding and this encoding can cause some errors in our map reduce job. 
+2. After upload the dataset files, we will need to convert these files to UTF-8 format, since some of them are in ISO-8859-1 encoding and this encoding can cause some errors in our map reduce job. <br />
   ``` 
   mkdir ~/data/dataset_utf8/
   cd ~/data/dataset 
   find . -type f -exec iconv -f iso-8859-1 -t utf-8 "{}" -o ~/data/dataset_utf8/"{}" \;  
   ```
 <br />
-3- With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:<br />
-  - Create 2 folders in the HDFS: docs and out<br />
+3. With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:<br />
+  - Create 2 folders in the HDFS: docs and out <br />
   ``` 
       hdfs dfs -mkdir /docs
       hdfs dfs -mkdir /out 
@@ -43,7 +43,7 @@ Last Updates:  <br />
       hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/
   ```
 <br />
-4- Upload the map reduce python scripts to $HADOOP_HOME<br />
+4. Upload the map reduce python scripts to $HADOOP_HOME <br />
 ```
  mkdir $HADOOP_HOME/scripts<br />
  HADOOP_HOME/scripts/mapper3.py<br />
@@ -55,12 +55,12 @@ Give the proper permissions to the scripts:<br />
  chmod a+x HADOOP_HOME/scripts/*er3.py<br />
 ``` 
 <br />
-5- Execute the Hadoop Streaming jar, informing the params( input, output, mapper, reducer, file):<br />
+5. Execute the Hadoop Streaming jar, informing the params( input, output, mapper, reducer, file): <br />
 ```
 $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar  -file scripts/mapper3.py   -mapper mapper3.py   -file  scripts/reducer3.py  -reducer reducer3.py   -input  hdfs:///docs/*  -output out/index01
 ```
 <br />
-6- If the Map Reduce job succeed, we can see the output result in hdfs:<br />
+6. If the Map Reduce job succeed, we can see the output result in hdfs:<br />
 ```
 hdfs dfs -tail out/index01/part-00000<br />
 ```
