@@ -41,11 +41,9 @@ Last Updates:  <br />
    ```
    
   - Copy the utf8 files to the /docs folder in HDFS:
-  
-  ``` 
-      hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/
-  ```
+  ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
 <br />
+
 4. Upload the map reduce python scripts to $HADOOP_HOME :
 
 ```
@@ -55,7 +53,7 @@ Last Updates:  <br />
 ```
 
 <br />
-Give the proper permissions to the scripts:<br />
+  - Give the proper permissions to the scripts:<br />
 
 ```
  chmod a+x HADOOP_HOME/scripts/*er3.py<br />
@@ -74,10 +72,9 @@ $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming
 ` hdfs dfs -tail out/index01/part-00000 `
 
 <br />
+
 Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
-```
-hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br />
-```
+
+` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
+
 <br /><br />
-
-
