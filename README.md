@@ -23,6 +23,7 @@ Last Updates:  <br />
 1. Upload the challenge dataset (https://github.com/projeto22/challenge-data-engineer/tree/master/dataset) to a folder in the NameNode server. In our example we created the following folder in namenode: <br />
     ` mkdir ~/data/dataset  `
   <br />
+  
 2. After upload the dataset files, we will need to convert these files to UTF-8 format, since some of them are in ISO-8859-1 encoding and this encoding can cause some errors in our map reduce job: 
 
   ```
@@ -32,6 +33,7 @@ Last Updates:  <br />
   ```
 
 <br />
+
 3. With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:
 
   - Create 2 folders in the HDFS: docs and out :
@@ -70,13 +72,14 @@ Last Updates:  <br />
 ```
 
 <br />
+
 6. If the Map Reduce job succeed, we can see the output result in hdfs:<br />
 
     ` hdfs dfs -tail out/index01/part-00000 `
 
 <br />
 
-Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
+    Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
 
     ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
 
