@@ -21,7 +21,7 @@ Last Updates:  <br />
   
 ## Settings:
 1. Upload the challenge dataset (https://github.com/projeto22/challenge-data-engineer/tree/master/dataset) to a folder in the NameNode server. In our example we created the following folder in namenode: <br />
-  ` mkdir ~/data/dataset  `
+    ` mkdir ~/data/dataset  `
   <br />
 2. After upload the dataset files, we will need to convert these files to UTF-8 format, since some of them are in ISO-8859-1 encoding and this encoding can cause some errors in our map reduce job: 
 
@@ -37,28 +37,28 @@ Last Updates:  <br />
   - Create 2 folders in the HDFS: docs and out :
   
   ``` 
-      hdfs dfs -mkdir /docs
-      hdfs dfs -mkdir /out 
-   ```
+    hdfs dfs -mkdir /docs
+    hdfs dfs -mkdir /out 
+  ```
    
   - Copy the utf8 files to the /docs folder in HDFS:
   
-  ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
+      ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
   
 <br />
 
 4. Upload the map reduce python scripts to $HADOOP_HOME :
 
 ```
- mkdir $HADOOP_HOME/scripts<br />
- HADOOP_HOME/scripts/mapper3.py<br />
- HADOOP_HOME/scripts/reducer3.py<br />
+    mkdir $HADOOP_HOME/scripts<br />
+    HADOOP_HOME/scripts/mapper3.py<br />
+    HADOOP_HOME/scripts/reducer3.py<br />
 ```
 
   - Give the proper permissions to the scripts:<br />
 
 ```
- chmod a+x HADOOP_HOME/scripts/*er3.py<br />
+    chmod a+x HADOOP_HOME/scripts/*er3.py<br />
 ``` 
 
 <br />
@@ -66,18 +66,18 @@ Last Updates:  <br />
 5. Execute the Hadoop Streaming jar, informing the params( input, output, mapper, reducer, file): <br />
 
 ```
-$HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar  -file scripts/mapper3.py   -mapper mapper3.py   -file  scripts/reducer3.py  -reducer reducer3.py   -input  hdfs:///docs/*  -output out/index01
+    $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar  -file scripts/mapper3.py   -mapper mapper3.py   -file  scripts/reducer3.py  -reducer reducer3.py   -input  hdfs:///docs/*  -output out/index01
 ```
 
 <br />
 6. If the Map Reduce job succeed, we can see the output result in hdfs:<br />
 
-` hdfs dfs -tail out/index01/part-00000 `
+    ` hdfs dfs -tail out/index01/part-00000 `
 
 <br />
 
 Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
 
-` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
+    ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
 
 <br /><br />
