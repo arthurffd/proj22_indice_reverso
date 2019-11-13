@@ -35,41 +35,40 @@ Last Updates:  <br />
 <br />
 
 3. With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:
-
-    - Create 2 folders in the HDFS: docs and out :
+  - Create 2 folders in the HDFS (docs and out):
   
   ``` 
       hdfs dfs -mkdir /docs
       hdfs dfs -mkdir /out 
   ```
    
-    - Copy the utf8 files to the /docs folder in HDFS:
+  - Copy the utf8 files to the /docs folder in HDFS:
   
-        ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
+    ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
   
 <br />
 
 4. Upload the map reduce python scripts to $HADOOP_HOME :
 
-```
+  ```
     mkdir $HADOOP_HOME/scripts<br />
     HADOOP_HOME/scripts/mapper3.py<br />
     HADOOP_HOME/scripts/reducer3.py<br />
-```
+  ```
 
-    - Give the proper permissions to the scripts:<br />
+  - Give the proper permissions to the scripts:<br />
 
-```
+    ```
       chmod a+x HADOOP_HOME/scripts/*er3.py<br />
-``` 
+    ``` 
 
 <br />
 
 5. Execute the Hadoop Streaming jar, informing the params( input, output, mapper, reducer, file): <br />
 
-```
+  ```
     $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar  -file scripts/mapper3.py   -mapper mapper3.py   -file  scripts/reducer3.py  -reducer reducer3.py   -input  hdfs:///docs/*  -output out/index01
-```
+  ```
 
 <br />
 
