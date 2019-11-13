@@ -10,9 +10,16 @@ Created Date: 2019/11/13 <br />
 Last Updates:  <br />
 <br /><br />
 
-## How to run the application:
-  1. This application will run a Hadoop Map Reduce job in order to generate the dictionary. So a Unix environment with a Hadoop HDFS cluster is necessary. <br />
-  <br />
+## Requirements:
+- This application will run a Hadoop Map Reduce job in order to generate the dictionary. So a Unix environment with a Hadoop HDFS cluster is necessary. <br /><br />
+- Miminum Requirements (tested with this application):
+  - Hadoop Cluster using Amazon EC2 instances:
+    - 01 NameNode:  t3a.large	 | 2 cores | 8 GiB RAM | 8GB HD
+    - 03 DataNodes: t3a.medium | 2 cores | 4 GiB RAM | 8GB HD
+    - OS: Ubuntu Server 16.04 LTS (HVM), SSD Volume Type (64-bit x86)
+  <br /><br />
+  
+  
 Upload the sample data files to a folder in the server (namenode).<br />
 mkdir ~/data/dataset<br />
 <br /><br />
@@ -50,6 +57,4 @@ hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br />
 
 <br /><br />
 
-Miminum Requirements, considering a Hadoop Cluster using Amazon EC2 instances:
-01 NameNode:  t3a.large	    2 cores		8 GiB RAM
-03 DataNodes: t3a.medium	2 cores 	4 GiB RAM	
+
