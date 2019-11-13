@@ -41,7 +41,9 @@ Last Updates:  <br />
    ```
    
   - Copy the utf8 files to the /docs folder in HDFS:
+  
   ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
+  
 <br />
 
 4. Upload the map reduce python scripts to $HADOOP_HOME :
