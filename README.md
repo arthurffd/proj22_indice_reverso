@@ -36,16 +36,16 @@ Last Updates:  <br />
 
 3. With your Hadoop HDFS and YARN running, go to the $HADOOP_HOME dir:
 
-  - Create 2 folders in the HDFS: docs and out :
+    - Create 2 folders in the HDFS: docs and out :
   
   ``` 
-    hdfs dfs -mkdir /docs
-    hdfs dfs -mkdir /out 
+      hdfs dfs -mkdir /docs
+      hdfs dfs -mkdir /out 
   ```
    
-  - Copy the utf8 files to the /docs folder in HDFS:
+    - Copy the utf8 files to the /docs folder in HDFS:
   
-      ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
+        ` hdfs dfs -copyFromLocal ~/data/dataset_utf8/* /docs/ `
   
 <br />
 
@@ -57,10 +57,10 @@ Last Updates:  <br />
     HADOOP_HOME/scripts/reducer3.py<br />
 ```
 
-  - Give the proper permissions to the scripts:<br />
+    - Give the proper permissions to the scripts:<br />
 
 ```
-    chmod a+x HADOOP_HOME/scripts/*er3.py<br />
+      chmod a+x HADOOP_HOME/scripts/*er3.py<br />
 ``` 
 
 <br />
@@ -81,6 +81,6 @@ Last Updates:  <br />
 
     Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
 
-    ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
+      ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
 
 <br /><br />
