@@ -19,16 +19,12 @@ Last Updates:  <br />
     - OS: Ubuntu Server 16.04 LTS (HVM), SSD Volume Type (64-bit x86)
   <br /><br />
   
-  
-Upload the sample data files to a folder in the server (namenode).<br />
-mkdir ~/data/dataset<br />
-<br /><br />
-We will need to convert the files to UTF-8 format, since some of them are in ISO-8859-1 encoding and this can cause some errors.
-mkdir ~/data/dataset_utf8/<br />
-access the folder with the original files:<br />
-cd ~/data/dataset<br />
-convert them to UTF-8 and store them at /dataset_utf8/ folder:<br />
-find . -type f -exec iconv -f iso-8859-1 -t utf-8 "{}" -o ~/data/dataset_utf8/"{}" \;<br />
+## Settings:
+1- Upload the challenge dataset (https://github.com/projeto22/challenge-data-engineer/tree/master/dataset) to a folder in the NameNode server. In our example we created the following folder in namenode: " mkdir ~/data/dataset " <br /><br />
+2- After upload the dataset files, we will need to convert these files to UTF-8 format, since some of them are in ISO-8859-1 encoding and this encoding can cause some errors in our map reduce job. <br />
+  - mkdir ~/data/dataset_utf8/ <br />
+  - cd ~/data/dataset <br />
+  - find . -type f -exec iconv -f iso-8859-1 -t utf-8 "{}" -o ~/data/dataset_utf8/"{}" \; <br /><br /> 
 
 With your hdfs and yarn running, go to the $HADOOP_HOME dir:<br />
 Create 2 folders in the HDFS: docs and out<br />
