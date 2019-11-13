@@ -77,9 +77,8 @@ Last Updates:  <br />
 
     ` hdfs dfs -tail out/index01/part-00000 `
 
-<br />
-    Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
+      Or we can also copy the sorted result to a local file (dict_index01.out) :<br />
 
-      ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
+        ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br /> `
 
 <br /><br />
