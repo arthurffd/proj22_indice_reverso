@@ -48,7 +48,7 @@ Last Updates:  <br />
   
 <br />
 
-4. Upload the map reduce python scripts to $HADOOP_HOME :
+4. Upload the mapper [mapper3.py](mapper3.py) and reducer [reducer3.py](reducer3.py) python scripts to $HADOOP_HOME :
 
   ```
     mkdir $HADOOP_HOME/scripts<br />
@@ -76,7 +76,7 @@ Last Updates:  <br />
 
     ` hdfs dfs -tail out/index01/part-00000 `
 
-    or we can also copy the sorted result to a local file (dict_index01.out) :<br />
+    or we can also copy the sorted result to a local file ( [dict_index01.out.gz](dict_index01.out.gz) contains the output for our job execution ) :<br />
 
       ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br />  ` 
 
