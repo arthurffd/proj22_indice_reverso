@@ -140,7 +140,8 @@ If the Map Reduce jobs succeed, we can see the output result in hdfs, using the 
 ## Quick Test:
 Here is a quick test to check if the dictionary reference and the index are correct, comparing with a search on my local machine using Notepad++ : <br/> <br/>
 ![Comparing some words from job output and Notepad++ search!](/img/TestResults.png "Quick test results")
-
+ <br/> <br/>
+ We can see in the image above that the words "formosa", "zurich" and "zoological" have the same count of hits and the document names are matching, between Notepad++ search results and our job output in the editor.
 
 
 
