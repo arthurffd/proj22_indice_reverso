@@ -83,8 +83,8 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
   <br/>
 
   2. Reversed Index Job: This job execution will get the words from all documents and create an inverted index. <br/>
-      Output format: " <word_id> \tab < [ doc_id ] > " <br/>
-      Reducer script: **idx_reducer.py** - Output: out/index0**2**
+      Output format: " <word_id> \tab < [ doc_id_01, doc_id_02 , ... ] > " <br/>
+      Reducer script: **idx_reducer.py** - Output: out/index02
 
       ```
       $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
@@ -98,7 +98,7 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
       <br />
 
   3. Extended Index Job: This job execution will get the words from all documents and create an extended inverted index.
-      Output format: " < word > \tab < [ doc_id , word_count ] > " <br/>
+      Output format: " < word > \tab < [ doc_id_01 : word_count , doc_id_02 : word_count ] > " <br/>
       Reducer script: **ext_reducer.py** - Output: out/index03
 
     ```
