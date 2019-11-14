@@ -162,7 +162,6 @@ Here is a quick test to check if the dictionary reference and the index are corr
 
   ### Next steps: <br/>
   #### Spark (PySpark or Scala) and AWS EMR <br/>
-  <br/>
    MapReduce VS Spark – Inverted Index example (spark e java) <br/>
    https://stdatalabs.com/2017/03/mapreduce-vs-spark-inverted-index/ <br/><br/>
 
