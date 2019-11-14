@@ -160,14 +160,14 @@ Here is a quick test to check if the dictionary reference and the index are corr
   Writing An Hadoop MapReduce Program In Python  <br/>
   https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/  <br/><br/>
 
-  **For next steps: Spark (PySpark or Scala) and AWS EMR ** <br/>
+  ### For next steps: Spark (PySpark or Scala) and AWS EMR ** <br/>
 
-    MapReduce VS Spark – Inverted Index example (spark e java) <br/>
-    https://stdatalabs.com/2017/03/mapreduce-vs-spark-inverted-index/ <br/><br/>
+  MapReduce VS Spark – Inverted Index example (spark e java) <br/>
+  https://stdatalabs.com/2017/03/mapreduce-vs-spark-inverted-index/ <br/><br/>
 
-    Real-world Python workloads on Spark: EMR clusters <br/>
-    https://becominghuman.ai/real-world-python-workloads-on-spark-emr-clusters-3c6bda1a1350 <br/><br/>
+  Real-world Python workloads on Spark: EMR clusters <br/>
+  https://becominghuman.ai/real-world-python-workloads-on-spark-emr-clusters-3c6bda1a1350 <br/><br/>
 
-    Word-count exercise with Spark on Amazon EMR (SCALA) <br/>
-    https://skipperkongen.dk/2014/07/18/word-count-with-spark-on-amazon-emr/ <br/>
- 
+  Word-count exercise with Spark on Amazon EMR (SCALA) <br/>
+  https://skipperkongen.dk/2014/07/18/word-count-with-spark-on-amazon-emr/ <br/>
+
