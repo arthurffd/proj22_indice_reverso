@@ -98,7 +98,7 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
       <br />
 
   3. Extended Index Job: This job execution will get the words from all documents and create an extended inverted index.
-      Output format: " < word > \tab < [ doc_id_01 : word_count , doc_id_02 : word_count ] > " <br/>
+      Output format: " < word > \tab < [ doc_id_01 : word_count , doc_id_02 : word_count , ... ] > " <br/>
       Reducer script: **ext_reducer.py** - Output: out/index03
 
     ```
@@ -114,12 +114,30 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
 <br />
 <br />
 
-6. If the Map Reduce job succeed, we can see the output result in hdfs:<br />
+## Job Output:
+If the Map Reduce jobs succeed, we can see the output result in hdfs, using the commands below:<br />
 
-    ` hdfs dfs -tail out/index01/part-00000 `
+    ``` 
+        hdfs dfs -tail out/index01/part-00000  # Dictionary Reference output
+        hdfs dfs -tail out/index02/part-00000  # Reversed Index output
+        hdfs dfs -tail out/index03/part-00000  # Extended Reversed Index output
+    ``` 
+    
+   or we can also copy the output result from HDFS to a local file as the following example : 
 
-    or we can also copy the sorted result to a local file ( [dict_index01.out.gz](dict_index01.out.gz) contains the output for our job execution ) :<br />
+      ```
+        hdfs dfs -copyToLocal out/index01/part-00000 output/dict_reference.out  <br />  
+        hdfs dfs -copyToLocal out/index02/part-00000 output/reversed_index.out  <br />   
+        hdfs dfs -copyToLocal out/index03/part-00000 output/extended_index.out  <br />   
+      ```
+      
+  The output for the previous job executions that we've made in our environment are available in this repository:
+  - Job1 - Dictionary Reference: [output/dict_reference.out.gz](output/dict_reference.out.gz)
+  - Job2 - Reversed Index: [output/reversed_index.out.gz](output/reversed_index.out.gz)
+  - Job3 - Extended Reversed Index: [output/extended_index.out.gz](output/extended_index.out.gz)
+  
+  
+    
 
-      ` hdfs dfs -cat out/index01/part-00000 | sort -k1,1 > dict_index01.out<br />  ` 
 
 <br /><br />
