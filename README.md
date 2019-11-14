@@ -5,10 +5,13 @@
 <br />
 Customer: Proj22 <br />
 Developer: Arthur Flores Duarte <br />
+Challenge: https://github.com/projeto22/challenge-data-engineer
+Description: for this challenge, we used a reversed index algorithm applying MapReduce from Hadoop Streaming with Python language. The solution was tested over a Hadoop HDFS cluster deployed on AWS EC2 instances.
 <br />
 Created Date: 2019/11/13 <br />
 Last Updates:  <br />
 <br /><br />
+
 
 ## Requirements:
 - This application will run a Hadoop Map Reduce job in order to generate the dictionary. So a Unix environment with a Hadoop HDFS cluster is necessary. <br /><br />
