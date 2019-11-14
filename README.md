@@ -135,9 +135,13 @@ If the Map Reduce jobs succeed, we can see the output result in hdfs, using the 
   - Job1 - Dictionary Reference: [output/dict_reference.out.gz](output/dict_reference.out.gz)
   - Job2 - Reversed Index: [output/reversed_index.out.gz](output/reversed_index.out.gz)
   - Job3 - Extended Reversed Index: [output/extended_index.out.gz](output/extended_index.out.gz)
+  <br/><br/>
   
-  
-    
+## Quick Test:
+Here is a quick test to check if the dictionary reference and the index are correct, comparing with a search on my local machine using Notepad++ : <br/> <br/>
+![Comparing some words from job output and Notepad++ search!](/img/TestResults.png "Quick test results")
+
+
 
 
 <br /><br />
