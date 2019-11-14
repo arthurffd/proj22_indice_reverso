@@ -48,19 +48,18 @@ Last Updates:  <br />
   
 <br />
 
-4. Upload the mapper [mapper3.py](mapper3.py) and reducer [reducer3.py](reducer3.py) python scripts to $HADOOP_HOME :
-
-  ```
-    mkdir $HADOOP_HOME/scripts<br />
-    HADOOP_HOME/scripts/mapper3.py<br />
-    HADOOP_HOME/scripts/reducer3.py<br />
-  ```
+4. Create a scripts folder into $HADOOP_HOME and upload the MapReduce python scripts into this folder:
+    
+    - ` mkdir $HADOOP_HOME/scripts<br /> `
+    
+    - [scripts/mapper.py](scripts/mapper.py)
+    - [scripts/dict_reducer.py](scripts/dict_reducer.py)
+    - [scripts/idx_reducer.py](scripts/idx_reducer.py)
+    - [scripts/ext_reducer.py](scripts/ext_reducer.py)
 
   - Give the proper permissions to the scripts:<br />
 
-    ```
-      chmod a+x HADOOP_HOME/scripts/*er3.py<br />
-    ``` 
+    ` chmod a+x HADOOP_HOME/scripts/*er3.py `
 
 <br />
 
