@@ -123,12 +123,12 @@ If the Map Reduce jobs succeed, we can see the output result in hdfs, using the 
         hdfs dfs -tail out/index03/part-00000  # Extended Reversed Index output
     ``` 
     
-   or we can also copy the output result from HDFS to a local file as the following example : 
+   or we can also copy the output result from HDFS to a local file as the following example : <br />
 
       ```
-        hdfs dfs -copyToLocal out/index01/part-00000 output/dict_reference.out  <br />  
-        hdfs dfs -copyToLocal out/index02/part-00000 output/reversed_index.out  <br />   
-        hdfs dfs -copyToLocal out/index03/part-00000 output/extended_index.out  <br />   
+        hdfs dfs -copyToLocal out/index01/part-00000 output/dict_reference.out    
+        hdfs dfs -copyToLocal out/index02/part-00000 output/reversed_index.out     
+        hdfs dfs -copyToLocal out/index03/part-00000 output/extended_index.out    
       ```
       
   The output for the previous job executions that we've made in our environment are available in this repository:
