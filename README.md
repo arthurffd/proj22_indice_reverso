@@ -50,7 +50,7 @@ Last Updates:  <br />
 
 4. Create a scripts folder into $HADOOP_HOME and upload the MapReduce python scripts into this folder:
     
-    - ` mkdir $HADOOP_HOME/scripts<br /> `
+    - ` mkdir $HADOOP_HOME/scripts `
     
     - [scripts/mapper.py](scripts/mapper.py)
     - [scripts/dict_reducer.py](scripts/dict_reducer.py)
@@ -59,16 +59,53 @@ Last Updates:  <br />
 
   - Give the proper permissions to the scripts:<br />
 
-    ` chmod a+x HADOOP_HOME/scripts/*er3.py `
+    ` chmod a+x HADOOP_HOME/scripts/*er.py `
 
 <br />
+<br />
 
-5. Execute the Hadoop Streaming jar, informing the params( input, output, mapper, reducer, file): <br />
+## Job Execution:
+Execute the Hadoop Streaming jar, informing the params as below ( input, output, mapper, reducer, file) for each job: <br />
 
-  ```
-    $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar  -file scripts/mapper3.py   -mapper mapper3.py   -file  scripts/reducer3.py  -reducer reducer3.py   -input  hdfs:///docs/*  -output out/index01
-  ```
+  1. Dictionary Reference Job. This job will get the words from all documents and create an index reference in the format "<word> : <word_id>" 
 
+      ```
+        $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
+        -input  hdfs:///docs/*  \
+        -file scripts/mapper.py   \
+        -mapper mapper.py   \
+        -file  scripts/dict_reducer.py  \
+        -reducer dict_reducer.py   \
+        -output out/index01
+      ```
+  <br/>
+
+  2. Reversed Index Job: This job execution will get the words from all documents and create an inverted index in the format "<word_id> : <[doc_id_list]> :
+
+      ```
+      $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
+      -input  hdfs:///docs/*  \
+      -file scripts/mapper.py   \
+      -mapper mapper.py   \
+      -file  scripts/idx_reducer.py  \
+      -reducer idx_reducer.py   \
+      -output out/index02
+      ```
+      <br />
+
+  3. Extended Index Job: This job execution will get the words from all documents and create an extended inverted index in the format "<word> : <[doc_id, word_count]> " :
+
+    ```
+      $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
+      -input  hdfs:///docs/*  \
+      -file scripts/mapper.py   \
+      -mapper mapper.py   \
+      -file  scripts/ext_reducer.py  \
+      -reducer ext_reducer.py   \
+      -output out/index03	  -file  scripts/reducer3.py  -reducer reducer3.py   -input  hdfs:///docs/*  -output out/index01
+      ```
+
+<br />
 <br />
 
 6. If the Map Reduce job succeed, we can see the output result in hdfs:<br />
