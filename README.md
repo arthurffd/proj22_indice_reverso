@@ -3,13 +3,13 @@
 ## Purpose: 
  This document contains necessary information to run the application and explain the purposes and expected results. <br />
 <br />
-Customer: Proj22 <br />
-Developer: Arthur Flores Duarte <br />
-Challenge: https://github.com/projeto22/challenge-data-engineer <br />
+Customer: Proj22 <br /><br />
+Developer: Arthur Flores Duarte <br /><br />
+Challenge: https://github.com/projeto22/challenge-data-engineer <br /><br />
 Description: for this challenge, we used a reversed index algorithm applying MapReduce from Hadoop Streaming with Python language. The solution was tested over a Hadoop HDFS cluster deployed on AWS EC2 instances.
-<br />
-Created Date: 2019/11/13 <br />
-Last Updates:  <br />
+<br /><br />
+Created Date: 2019/11/12 <br />
+Last Updates:  2019/11/13<br />
 <br /><br />
 
 
@@ -150,6 +150,24 @@ Here is a quick test to check if the dictionary reference and the index are corr
  <br/> <br/>
  We can see in the image above that the words "formosa", "zurich" and "zoological" have the same count of hits and the document names are matching, between Notepad++ search results and our job output in the editor.
 
+## References:
+  Setting up Hadoop cluster on AWS EC2 (4 nodes) <br/>
+  https://medium.com/@jeevananandanne/setup-4-node-hadoop-cluster-on-aws-ec2-instances-1c1eeb4453bd <br/><br/>
 
+  CRIANDO SEU PRIMEIRO CÓDIGO HADOOP EM PYTHON <br/>
+  https://aquelatecnologia.com.br/2018/10/08/criando-seu-primeiro-codigo-hadoop-em-python/ <br/><br/>
 
-<br /><br />
+  Writing An Hadoop MapReduce Program In Python  <br/>
+  https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/  <br/><br/>
+
+ **For next steps: Spark (PySpark or Scala) and AWS EMR ** <br/>
+
+   MapReduce VS Spark – Inverted Index example (spark e java) <br/>
+   https://stdatalabs.com/2017/03/mapreduce-vs-spark-inverted-index/ <br/><br/>
+   
+   Real-world Python workloads on Spark: EMR clusters <br/>
+   https://becominghuman.ai/real-world-python-workloads-on-spark-emr-clusters-3c6bda1a1350 <br/><br/>
+ 
+   Word-count exercise with Spark on Amazon EMR (SCALA) <br/>
+   https://skipperkongen.dk/2014/07/18/word-count-with-spark-on-amazon-emr/ <br/>
+ 
