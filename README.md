@@ -65,9 +65,9 @@ Last Updates:  <br />
 <br />
 
 ## Job Execution:
-Execute the Hadoop Streaming jar, informing the params as below ( input, output, mapper, reducer, file) for each job: <br />
+Execute the Hadoop Streaming jar, informing the params as below ( input, output, mapper, reducer, file) for each job. All the jobs will use the same input and mapper script (mapper.py), but we will change only the reducer script and the output destination: <br />
 
-  1. Dictionary Reference Job. This job will get the words from all documents and create an index reference in the format "<word> : <word_id>" 
+  1. Dictionary Reference Job. This job will get the words from all documents and create an index reference in the format "<word> : <word_id>". Reducer script: **dict_reducer.py** - Output: out/index0**1**
 
       ```
         $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
@@ -80,7 +80,7 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
       ```
   <br/>
 
-  2. Reversed Index Job: This job execution will get the words from all documents and create an inverted index in the format "<word_id> : <[doc_id_list]> :
+  2. Reversed Index Job: This job execution will get the words from all documents and create an inverted index in the format "<word_id> : <[doc_id_list]>". Reducer script: **idx_reducer.py** - Output: out/index0**2**
 
       ```
       $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
@@ -93,7 +93,7 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
       ```
       <br />
 
-  3. Extended Index Job: This job execution will get the words from all documents and create an extended inverted index in the format "<word> : <[doc_id, word_count]> " :
+  3. Extended Index Job: This job execution will get the words from all documents and create an extended inverted index in the format "<word> : <[doc_id, word_count]> ". Reducer script: **ext_reducer.py** - Output: out/index0**3**
 
     ```
       $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
