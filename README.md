@@ -68,7 +68,7 @@ Last Updates:  <br />
 Execute the Hadoop Streaming jar, informing the params as below ( input, output, mapper, reducer, file) for each job. All the jobs will use the same input and mapper script (mapper.py), but we will change only the reducer script and the output destination: <br />
 
   1. Dictionary Reference Job. This job will get the words from all documents and create an index reference. <br/>
-    Output format " <word> \t <word_id> " <br/>
+    Output format " < word > \tab < word_id > " <br/>
     Reducer script: **dict_reducer.py** - Output: out/index01
 
       ```
@@ -83,7 +83,7 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
   <br/>
 
   2. Reversed Index Job: This job execution will get the words from all documents and create an inverted index. <br/>
-      Output format: " <word_id> \t <[doc_id_list]> " <br/>
+      Output format: " <word_id> \tab < [ doc_id ] > " <br/>
       Reducer script: **idx_reducer.py** - Output: out/index0**2**
 
       ```
@@ -98,7 +98,7 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
       <br />
 
   3. Extended Index Job: This job execution will get the words from all documents and create an extended inverted index.
-      Output format: "<word> \t <[doc_id, word_count]> " <br/>
+      Output format: " < word > \tab < [ doc_id , word_count ] > " <br/>
       Reducer script: **ext_reducer.py** - Output: out/index03
 
     ```
