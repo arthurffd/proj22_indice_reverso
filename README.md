@@ -115,12 +115,16 @@ Execute the Hadoop Streaming jar, informing the params as below ( input, output,
 <br />
 
 ## Job Output:
-If the Map Reduce jobs succeed, we can see the output result in hdfs, using the commands below:<br />
+Here is an image of our job execution in Hadoop applications Web GUI. It took 1 minute and half to execute one of the map reduce jobs in our EC2 cluster: <br/> <br/>
+![Hadoop web gui job execution results!](/img/Dict_Index_MapReduce_Job_Result.png "Hadoop web gui job result")
+ <br/> <br/>
+
+We can see the output result in hdfs, using the commands below: <br />
 
     ``` 
-        hdfs dfs -tail out/index01/part-00000  # Dictionary Reference output
-        hdfs dfs -tail out/index02/part-00000  # Reversed Index output
-        hdfs dfs -tail out/index03/part-00000  # Extended Reversed Index output
+      hdfs dfs -tail out/index01/part-00000  # Dictionary Reference output
+      hdfs dfs -tail out/index02/part-00000  # Reversed Index output
+      hdfs dfs -tail out/index03/part-00000  # Extended Reversed Index output
     ``` 
     
    or we can also copy the output result from HDFS to a local file as the following example : <br />
