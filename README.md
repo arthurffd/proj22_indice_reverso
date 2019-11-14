@@ -1,7 +1,7 @@
 # Projeto 22 - Data Engineering Challenge - Reverse Index Dictionary <br>
 
 ## Purpose: 
-  this document contains necessary information to run the application and explain the purposes and expected results.<br />
+ This document contains necessary information to run the application and explain the purposes and expected results. <br />
 <br />
 Customer: Proj22 <br />
 Developer: Arthur Flores Duarte <br />
